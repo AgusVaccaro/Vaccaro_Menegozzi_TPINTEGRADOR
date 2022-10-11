@@ -21,7 +21,7 @@
 
         <form action="login.php" method="post">
             <input name="usuario" class="form-control form-control-lg" placeholder="Usuario"><br>
-            <input name="clave" type="text" class="form-control form-control-lg" placeholder="Contraseña"><br>
+            <input name="contraseña" type="text" class="form-control form-control-lg" placeholder="Contraseña"><br>
             <input type="submit" value="Ingresar" class="btn btn-primary">
         </form><br>
       </div> 
