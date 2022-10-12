@@ -13,7 +13,7 @@ class RepositorioUsuario
             self::$conexion = new mysqli(
                 $credenciales['servidor'],
                 $credenciales['usuario'],
-                $credenciales['clave'],
+                $credenciales['contraseña'],
                 $credenciales['base_de_datos'],
             );
             if (self::$conexion->connect_error) {
@@ -27,7 +27,7 @@ class RepositorioUsuario
 
    public function login($nombreDeUsuario, $contraseña)
    {
-       $q = "SELECT id, clave, nombre, apellido FROM usuarios WHERE usuario = ?";
+       $q = "SELECT id, contraseña, nombre, apellido FROM usuarios WHERE usuario = ?";
        $query = self::$conexion->prepare($q);
        $query->bind_param("s", $nombreDeUsuario);
 

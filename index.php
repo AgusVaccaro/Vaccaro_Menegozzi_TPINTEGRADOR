@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="bootstrap.min.css">
     </head>
     <body class="container">
+        <center>
       <div class="jumbotron text-center">
       <h1>Sistema de control de stock</h1>
       </div>    
@@ -25,5 +26,6 @@
             <input type="submit" value="Ingresar" class="btn btn-primary">
         </form><br>
       </div> 
+      </center>
     </body>
 </html>

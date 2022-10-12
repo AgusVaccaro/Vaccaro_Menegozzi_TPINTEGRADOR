@@ -7,7 +7,7 @@ if (empty($_POST['usuario']) || empty($_POST['contraseña'])) {
     $cs = new ControlSesion();
     $login = $cs->login($_POST['usuario'], $_POST['contraseña']);
     if ($login[0] === true) {
-        $redirigir = 'Inicio.php';
+        $redirigir = 'home.php';
     } else {
         $redirigir = 'index.php?mensaje=' . $login[1];
     }

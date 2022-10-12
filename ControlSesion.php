@@ -1,6 +1,6 @@
 <?php
 require_once 'RepositorioUsuario.php';
-require_once 'Usuario.php';
+require_once 'usuario.php';
 
 class ControlSesion
 {
@@ -8,11 +8,11 @@ class ControlSesion
 
     public function login($nombreDeUsuario, $contraseña)
     {
-        $repositorio = new RepositorioUsuario();
-        $usuario = $repositorio->login($nombreDeUsuario, $contraseña);
+        $repo = new RepositorioUsuario();
+        $usuario = $repo->login($nombreDeUsuario, $contraseña);
 
         if ($usuario === false) {
-            return [ false, "Error al ingresar las credenciales" ];
+            return [ false, "Error: Nombre de usuario y/o contraseña incorrecto/s"];
         } else {
             session_start();
             $_SESSION['usuario'] = serialize($usuario);

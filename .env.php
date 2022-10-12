@@ -1,9 +1,9 @@
 <?php
 function credenciales() {
     return [
-        'usuario'=>'root' ,
+        'usuario'=>'root',
         'clave'=>'',
         'servidor'=>'localhost',
-        'base_de_datos'=>'localropa'
+        'base_de_datos'=>'stockropa'
     ];
 }
