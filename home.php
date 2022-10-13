@@ -21,7 +21,27 @@ if (isset($_SESSION['usuario'])) {
       <h1>Control de stock</h1>
       </div>    
       <div class="text-center">
-        <h3>Hola <?php echo $nombreApellido;?></h3>
+        <h3>Bienvenido <?php echo $nombreApellido;?></h3>
+		<form>
+			<label>id</label>
+			<input type="text" name="id">
+			<br>
+			<label>Marca</label>
+			<input type="text" name="marca">
+			<br>
+			<label>Producto</label>
+			<input type="text" name="producto">
+			<br>
+			<label>Talle</label>
+			<input type="text" name="talle">
+			<br>
+			<label>Color</label>
+			<input type="text" name="color">
+			<br>
+
+		</form>
+
+	</center>
         <p><a href="logout.php">Cerrar sesión</a></p>
       </div> 
     </body>
