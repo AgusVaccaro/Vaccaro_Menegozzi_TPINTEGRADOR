@@ -22,6 +22,6 @@ $myqsli->query("INSERT INTO
         )
     ");
 
-    header("location: home.php");
+    header("location: stock.php");
 
 }
