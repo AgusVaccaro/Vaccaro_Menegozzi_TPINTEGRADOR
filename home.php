@@ -18,12 +18,12 @@ if (isset($_SESSION['usuario'])) {
     </head>
     <body class="container">
       <div class="jumbotron text-center">
-      <h1>Control de stock</h1>
+      <h1>Ingreso de mercaderia</h1>
       </div>    
       <div class="text-center">
         <h3>Bienvenido <?php echo $nombreApellido;?></h3>
-		<form>
-			<label>id</label>
+		<form action="ingresar.php" method="post">
+			<label>Id del producto</label>
 			<input type="text" name="id">
 			<br>
 			<label>Marca</label>
@@ -38,7 +38,7 @@ if (isset($_SESSION['usuario'])) {
 			<label>Color</label>
 			<input type="text" name="color">
 			<br>
-
+			<button type="submit" class="btn btn-primary">ENVIAR</button>
 		</form>
 
 	</center>
