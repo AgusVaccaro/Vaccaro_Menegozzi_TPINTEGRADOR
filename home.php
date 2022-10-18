@@ -44,7 +44,11 @@ if (isset($_SESSION['usuario'])) {
 			<br>
 
 			<button type="submit" class="btn btn-primary">ENVIAR</button>
-			<p><a href="logout.php">Cerrar sesión</a></p>
+
+			<br>
+			<br>
+
+			<a href="logout.php" class="btn btn-secondary">Cerrar sesión</a>
 
 		</center>
   

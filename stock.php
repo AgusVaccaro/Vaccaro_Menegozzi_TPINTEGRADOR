@@ -9,39 +9,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <title>Stock de productos</title>
 </head>
-<body> 
-    <table border="1" align="center">
-        <caption><h2>Stock de productos</h2></caption>
-        <thead>
-            <tr>
+<body>
+        <center>
+        <div class="col-md-8">
+            <table class="table" >
+                <thead class="table-success table-striped" >
+                 <tr>
                 <th>Id del producto</th>
                 <th>Marca</th>
                 <th>Producto</th>
                 <th>Talle</th>
                 <th>Color</th>
-            </tr>
-        </thead>
+                <th></th>
+                <th></th>
+                </tr>
+                </thead>
+
         <tbody>
             <?php
             echo "<tr>";
             while ($resul = $query->fetch_assoc()){
-                echo "<td>".$resul["id"]."</td>";
-                echo "<td>".$resul["marca"]."</td>";
-                echo "<td>".$resul["producto"]."</td>";
-                echo "<td>".$resul["talle"]."</td>";
-                echo "<td>".$resul["color"]."</td>"; 
-            echo "</tr>";
+            ?>
+            <tr>
+                <th><?php  echo $resul['id']?></th>
+                <th><?php  echo $resul['marca']?></th>
+                <th><?php  echo $resul['producto']?></th>
+                <th><?php  echo $resul['talle']?></th>    
+                <th><?php  echo $resul['color']?></th>    
+                <th><a href="editar.php?id=<?php echo $resul['id'] ?>" class="btn btn-info">Editar</a></th>
+                <th><a href="eliminar.php?id=<?php echo $resul['id'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+            </tr>
+        <?php 
             }
            
         ?>
         </tbody>
     </table>
-    <p><a href="home.php">Ingresar otro producto</p>
+    <a href="home.php" class="btn btn-info"> Ingresar otro producto</a>
 
     <br>
+    <br>
 
-    <p><a href="logout.php">Cerrar sesión</a></p>
+    <a href="logout.php" class="btn btn-info">Cerrar sesión</a>
+    </center>
 </body>
 </html>

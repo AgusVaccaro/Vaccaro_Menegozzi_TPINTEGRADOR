@@ -22,6 +22,11 @@ $myqsli->query("INSERT INTO
         )
     ");
 
+    }else{
+        echo "Error al ingresar los datos";
+    }
+
+
     header("location: stock.php");
 
-}
+?>
