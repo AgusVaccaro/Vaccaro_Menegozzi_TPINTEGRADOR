@@ -13,36 +13,42 @@ if (isset($_SESSION['usuario'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <title>Control de stock</title>
-        <link rel="stylesheet" href="bootstrap.min.css">
     </head>
-    <body class="container">
-      <div class="jumbotron text-center">
-      <h1>Ingreso de mercaderia</h1>
-      </div>    
-      <div class="text-center">
-        <h3>Bienvenido <?php echo $nombreApellido;?></h3>
-		<form action="ingresar.php" method="post">
-			<label>Id del producto</label>
-			<input type="text" name="id">
-			<br>
-			<label>Marca</label>
-			<input type="text" name="marca">
-			<br>
-			<label>Producto</label>
-			<input type="text" name="producto">
-			<br>
-			<label>Talle</label>
-			<input type="text" name="talle">
-			<br>
-			<label>Color</label>
-			<input type="text" name="color">
-			<br>
-			<button type="submit" class="btn btn-primary">ENVIAR</button>
-		</form>
+    <body>
 
-	</center>
-        <p><a href="logout.php">Cerrar sesión</a></p>
-      </div> 
+      <div class="container mt-5">
+		<div class="row">
+			<center>
+		<h3>Bienvenido <?php echo $nombreApellido;?></h3>
+
+		<div class="col-md-3">
+	
+		<form action="ingresar.php" method="post">
+			
+			
+			<input type="text" class="form-control mb-3" name="id" placeholder="Id del producto">
+			<br>
+
+			<input type="text" class="form-control mb-3" name="marca" placeholder="Marca">
+			<br>
+			
+			<input type="text" class="form-control mb-3" name="producto" placeholder="Producto">
+			<br>
+			
+			<input type="text" class="form-control mb-3" name="talle" placeholder="Talle">
+			<br>
+
+			<input type="text" class="form-control mb-3" name="color" placeholder="Color">
+			<br>
+
+			<button type="submit" class="btn btn-primary">ENVIAR</button>
+			<p><a href="logout.php">Cerrar sesión</a></p>
+
+		</center>
+  
+		
+		</form>
     </body>
 </html>
