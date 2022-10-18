@@ -9,22 +9,24 @@ class RepositorioUsuario
     public function __construct()
     {
         if (is_null(self::$conexion)) {
+        try{
             $credenciales = credenciales();
             self::$conexion = new mysqli(
                 $credenciales['servidor'],
                 $credenciales['usuario'],
                 $credenciales['contraseña'],
-                $credenciales['base_de_datos'],
-            );
+                $credenciales['base_de_datos']);
+            } 
+            catch(Exception $e){
             if (self::$conexion->connect_error) {
-                $error = 'Error de conexión: ' . self::$conexion->connect_error;
+                $e = 'Error de conexion: ' .self::$conexion->connect_error;
                 self::$conexion = null;
-                die($error);
+                die($e);
             }
             self::$conexion->set_charset('utf8');
         }
    }
-
+}
    public function login($nombreDeUsuario, $contraseña)
    {
        $q = "SELECT id, contraseña, nombre, apellido FROM usuarios WHERE usuario = ?";
