@@ -8,7 +8,7 @@
     </head>
     <body class="container">
         <center>
-      <div class="jumbotron text-center">
+            <br>
       <h1>Sistema de control de stock</h1>
       </div>    
       <div class="text-center">

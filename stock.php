@@ -13,6 +13,7 @@
     <title>Stock de productos</title>
 </head>
 <body>
+
         <center>
         <div class="col-md-8">
             <table class="table" >
@@ -39,7 +40,7 @@
                 <th><?php  echo $resul['producto']?></th>
                 <th><?php  echo $resul['talle']?></th>    
                 <th><?php  echo $resul['color']?></th>    
-                <th><a href="editar.php?id=<?php echo $resul['id'] ?>" class="btn btn-info">Editar</a></th>
+                <th><a href="actualizar.php?id=<?php echo $resul['id'] ?>" class="btn btn-info">Editar</a></th>
                 <th><a href="eliminar.php?id=<?php echo $resul['id'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
             </tr>
         <?php 
@@ -48,12 +49,12 @@
         ?>
         </tbody>
     </table>
-    <a href="home.php" class="btn btn-info"> Ingresar otro producto</a>
+    <a href="home.php" class="btn btn-outline-success"> Ingresar otro producto</a>
 
     <br>
     <br>
 
-    <a href="logout.php" class="btn btn-info">Cerrar sesión</a>
+    <a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
     </center>
 </body>
 </html>

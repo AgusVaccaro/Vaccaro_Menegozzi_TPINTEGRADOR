@@ -29,26 +29,28 @@ if (isset($_SESSION['usuario'])) {
 			
 			
 			<input type="text" class="form-control mb-3" name="id" placeholder="Id del producto">
-			<br>
+	
 
 			<input type="text" class="form-control mb-3" name="marca" placeholder="Marca">
-			<br>
+		
 			
 			<input type="text" class="form-control mb-3" name="producto" placeholder="Producto">
-			<br>
+			
 			
 			<input type="text" class="form-control mb-3" name="talle" placeholder="Talle">
-			<br>
+			
 
 			<input type="text" class="form-control mb-3" name="color" placeholder="Color">
-			<br>
+			
 
-			<button type="submit" class="btn btn-primary">ENVIAR</button>
+			<button type="submit" class="btn btn-success">ENVIAR</button>
 
 			<br>
 			<br>
-
-			<a href="logout.php" class="btn btn-secondary">Cerrar sesión</a>
+			<a href="stock.php" class= "btn btn-outline-primary">Ver stock actual</a>
+			<br>
+			<br>
+			<a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
 
 		</center>
   
