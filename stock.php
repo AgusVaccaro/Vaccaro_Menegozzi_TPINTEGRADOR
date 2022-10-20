@@ -1,5 +1,5 @@
 <?php
-    require_once "conexion.php";
+    include ("conexion.php");
 
     $query = $myqsli->query("SELECT * FROM ropa");
 ?>
@@ -13,10 +13,46 @@
     <title>Stock de productos</title>
 </head>
 <body>
+    <center>
+   <br>
+     <div class="container">
+  <form>
+    <br>
+      <input class="form-control me-2 light-table-filter" data-table="table_id" type="text" 
+      placeholder="Buscar producto">
+      <hr>
+      </form>
+  </div>
 
-        <center>
-        <div class="col-md-8">
-            <table class="table" >
+
+      <table class="table_id table table-striped table-dark table_id ">
+  </div>
+  <?php
+  if(isset($_GET['enviar'])) {
+    $busqueda = $_GET['busqueda'];
+
+    $consulta = $myqsli->query("SELECT * FROM ropa WHERE marca
+    LIKE '%$busqueda%' OR producto LIKE '%$busqueda%' OR talle LIKE '%$busqueda%' OR color LIKE '%$busqueda%'");
+
+
+     while ($row = $consulta->fetch_array()) {
+     
+	if (isset($_GET['busqueda']))
+	{
+		$where="WHERE ropa.marca LIKE'%".$busqueda."%' OR producto  LIKE'%".$busqueda."%'
+    OR talle  LIKE'%".$busqueda."%'";
+	}
+  
+}
+  }
+?>
+
+
+</body>
+  <div class="col-md-8">
+    <br>
+
+            <table class="table_id table table-striped table-dark" id="table_id" data-table="table_id" >
                 <thead class="table-success table-striped" >
                  <tr>
                 <th>Id del producto</th>
@@ -24,13 +60,14 @@
                 <th>Producto</th>
                 <th>Talle</th>
                 <th>Color</th>
-                <th></th>
-                <th></th>
+                <th class="table-danger">Editar</th>
+               <th class="table-danger">Eliminar</th>
                 </tr>
                 </thead>
 
         <tbody>
-            <?php
+        </center>
+    <?php
             echo "<tr>";
             while ($resul = $query->fetch_assoc()){
             ?>
@@ -40,13 +77,12 @@
                 <th><?php  echo $resul['producto']?></th>
                 <th><?php  echo $resul['talle']?></th>    
                 <th><?php  echo $resul['color']?></th>    
-                <th><a href="actualizar.php?id=<?php echo $resul['id'] ?>" class="btn btn-info">Editar</a></th>
-                <th><a href="eliminar.php?id=<?php echo $resul['id'] ?>" class="btn btn-danger">Eliminar</a></th>                                        
+                <th><a href="actualizar.php?id=<?php echo $resul['id'] ?>" class="btn btn-outline-info">Editar</a></th>
+                <th><a href="eliminar.php?id=<?php echo $resul['id'] ?>" class="btn btn-outline-danger">Eliminar</a></th>                                        
             </tr>
         <?php 
             }
-           
-        ?>
+            ?>
         </tbody>
     </table>
     <a href="home.php" class="btn btn-outline-success"> Ingresar otro producto</a>
@@ -56,5 +92,6 @@
 
     <a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
     </center>
+    <script src="buscador.js"></script>
 </body>
 </html>

@@ -9,23 +9,44 @@
     <body class="container">
         <center>
             <br>
-      <h1>Sistema de control de stock</h1>
       </div>    
       <div class="text-center">
-        <h3>Inicio de sesion</h3>
+        <h3>Sistema de control de stock</h3>
         <?php
             if (isset($_GET['mensaje'])) {
-                echo '<div id="mensaje" class="alert alert-primary text-center">
+                echo '<div id="mensaje" class="alert alert-danger text-center">
                     <p>'.$_GET['mensaje'].'</p></div>';
             }
         ?>
+          <form action="login.php" method="post">
+<div class="vh-50 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-10 col-md-8 col-lg-4">
+        <div class="border border-3 border-primary"></div>
+        <div class="card bg-white shadow-lg">
+          <div class="card-body p-5">
+            <form class="mb-3 mt-md-4">
+              <h3 class="fw-bold mb-2 text-uppercase ">Iniciar sesion</h3>
+              <p class=" mb-5">Ingrese su usuario y su contraseña</p>
+              <div class="mb-3">
+              <input name="usuario" class="form-control form-control-md" placeholder="Usuario"><br>
+              </div>
+              <div class="mb-3">
+              <input name="contraseña" type="text" class="form-control form-control-md" placeholder="Contraseña"><br>
+              <div class="d-grid">
+                <button class="btn btn-outline-dark" type="submit">Ingresar</button>
+              </div>
+            </form>
+            <div>
+            </div>
 
-        <form action="login.php" method="post">
-            <input name="usuario" class="form-control form-control-lg" placeholder="Usuario"><br>
-            <input name="contraseña" type="text" class="form-control form-control-lg" placeholder="Contraseña"><br>
-            <input type="submit" value="Ingresar" class="btn btn-primary">
-        </form><br>
-      </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       </center>
     </body>
 </html>

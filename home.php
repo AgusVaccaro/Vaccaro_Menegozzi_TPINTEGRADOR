@@ -24,7 +24,7 @@ if (isset($_SESSION['usuario'])) {
 		<h3>Bienvenido <?php echo $nombreApellido;?></h3>
 
 		<div class="col-md-3">
-	
+		<h4>Ingresar producto</h4>
 		<form action="ingresar.php" method="post">
 			
 			
