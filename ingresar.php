@@ -27,6 +27,6 @@ $myqsli->query("INSERT INTO
     }
 
 
-    header("location: stock.php");
+    header("location: cargarstock.php");
 
 ?>

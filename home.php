@@ -47,7 +47,7 @@ if (isset($_SESSION['usuario'])) {
 
 			<br>
 			<br>
-			<a href="stock.php" class= "btn btn-outline-primary">Ver stock actual</a>
+			<a href="cargarstock.php" class= "btn btn-outline-primary">Ver stock actual</a>
 			<br>
 			<br>
 			<a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>

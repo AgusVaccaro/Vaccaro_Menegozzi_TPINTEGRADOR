@@ -13,6 +13,6 @@ $sql="UPDATE ropa SET  marca='$marca',producto='$producto',talle='$talle',color=
 $query=mysqli_query($con,$sql);
 
     if($query){
-        Header("Location: stock.php");
+        Header("Location: cargarstock.php");
     }
 ?>

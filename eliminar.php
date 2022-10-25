@@ -9,6 +9,6 @@ $sql="DELETE FROM ropa  WHERE id='$id'";
 $query=mysqli_query($con,$sql);
 
     if($query){
-        Header("Location: stock.php");
+        Header("Location: cargarstock.php");
     }
 ?>
