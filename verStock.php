@@ -1,7 +1,7 @@
 <?php
-    include ("conexion.php");
-    include ("stock.php");
-
+    include_once ("conexion.php");
+    include_once ("clases/ropa.php");
+    include_once ("clases/RepositorioRopa.php");
     $query = $myqsli->query("SELECT * FROM ropa");
 ?>
 <!DOCTYPE html>
@@ -70,16 +70,16 @@
         </center>
     <?php
             echo "<tr>";
-            while ($resul = $query->fetch_assoc()){
+            while ($ropa = $query->fetch_assoc()){
             ?>
             <tr>
-                <th><?php  echo $resul['id']?></th>
-                <th><?php  echo $resul['marca']?></th>
-                <th><?php  echo $resul['producto']?></th>
-                <th><?php  echo $resul['talle']?></th>    
-                <th><?php  echo $resul['color']?></th>    
-                <th><a href="actualizar.php?id=<?php echo $resul['id'] ?>" class="btn btn-outline-info">Editar</a></th>
-                <th><a href="eliminar.php?id=<?php echo $resul['id'] ?>" class="btn btn-outline-danger">Eliminar</a></th>                                        
+                <th><?php  echo $ropa['id']?></th>
+                <th><?php  echo $ropa['marca']?></th>
+                <th><?php  echo $ropa['producto']?></th>
+                <th><?php  echo $ropa['talle']?></th>    
+                <th><?php  echo $ropa['color']?></th>    
+                <th><a href="actualizar.php?id=<?php echo $ropa['id'] ?>" class="btn btn-outline-info">Editar</a></th>
+                <th><a href="eliminar.php?id=<?php echo $ropa['id'] ?>" class="btn btn-outline-danger">Eliminar</a></th>                                        
             </tr>
         <?php 
             }

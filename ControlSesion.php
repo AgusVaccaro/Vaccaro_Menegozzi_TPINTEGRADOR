@@ -1,6 +1,7 @@
 <?php
-require_once 'RepositorioUsuario.php';
-require_once 'usuario.php';
+require_once 'clases/RepositorioUsuario.php';
+require_once 'clases/usuario.php';
+
 
 class ControlSesion
 {

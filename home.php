@@ -1,5 +1,8 @@
 <?php
-require_once 'Usuario.php';
+require_once 'clases/usuario.php';
+require_once 'clases/RepositorioRopa.php';
+require_once 'clases/ropa.php';
+
 session_start();
 if (isset($_SESSION['usuario'])) {
     $usuario = unserialize($_SESSION['usuario']);
@@ -8,6 +11,7 @@ if (isset($_SESSION['usuario'])) {
     header('Location: index.php');
 }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
 
 		<div class="col-md-3">
 		<h4>Ingresar producto</h4>
-		<form action="ingresar.php" method="post">
+		<form action="ingresar.php" method="get">
 			
 			
 			<input type="text" class="form-control mb-3" name="id" placeholder="Id del producto">
@@ -44,10 +48,11 @@ if (isset($_SESSION['usuario'])) {
 			
 
 			<button type="submit" class="btn btn-success">ENVIAR</button>
+			
 
 			<br>
 			<br>
-			<a href="cargarstock.php" class= "btn btn-outline-primary">Ver stock actual</a>
+			<a href="verStock.php" class= "btn btn-outline-primary">Ver stock actual</a>
 			<br>
 			<br>
 			<a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>

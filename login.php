@@ -1,6 +1,7 @@
 <?php
 require_once 'ControlSesion.php';
 
+
 if (empty($_POST['usuario']) || empty($_POST['contraseña'])) {
     $redirigir = 'index.php?mensaje=Error: Falta nombre de usuario y/o contraseña';
 } else {

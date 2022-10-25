@@ -1,7 +1,6 @@
 <?php
-include("conexion.php");
 
-class Stock{
+class Ropa{
     protected $id;
     protected $marca;
     protected $producto;
@@ -15,6 +14,10 @@ class Stock{
         $this->producto = $producto;
         $this->talle = $talle;
         $this->color = $color;
+    }
+
+    public function setId($id){
+        $this->id = $id;
     }
 
     public function getId(){

@@ -1,6 +1,6 @@
 <?php
 
-include("conexion.php");
+include_once("conexion.php");
 $con=conectar();
 
 $id=$_POST['id'];
@@ -13,6 +13,6 @@ $sql="UPDATE ropa SET  marca='$marca',producto='$producto',talle='$talle',color=
 $query=mysqli_query($con,$sql);
 
     if($query){
-        Header("Location: cargarstock.php");
+        Header("Location: verStock.php");
     }
 ?>
