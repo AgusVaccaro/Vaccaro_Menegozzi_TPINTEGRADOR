@@ -1,7 +1,7 @@
 <?php
 require_once '.env.php';
 require_once 'Usuario.php';
-
+require_once 'ropa.php';
 class RepositorioUsuario 
 {
     protected static $conexion = null;
@@ -40,4 +40,25 @@ class RepositorioUsuario
        }
        return false;
     }
+
+    public function update(Ropa $ropa, $id)
+    {
+        $q = "UPDATE ropa ";
+
+        $marca = $ropa->getMarca();
+        $producto = $ropa->getProducto();
+        $talle = $ropa->getTalle();
+        $color = $ropa->getColor();
+
+        $q.= "SET marca = '$marca', producto = '$producto', talle = '$talle', color = '$color' WHERE id = $id";
+        $query = self::$conexion->prepare($q);
+        
+        if ($query->execute()) {
+            // Se guardó bien, retornamos el id del usuario
+            return self::$conexion->insert_id;
+        } else {
+            // No se guardó bien, retornamos false
+            return false;
+        }
+}
 }

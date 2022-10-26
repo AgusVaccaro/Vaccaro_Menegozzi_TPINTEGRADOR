@@ -1,18 +1,15 @@
 <?php
+include_once("clases/ropa.php");
+include_once("clases/RepositorioRopa.php");
 
-include_once("conexion.php");
-$con=conectar();
+if(isset($_POST['id']) && isset($_POST['marca']) && isset($_POST['producto']) && isset($_POST['talle']) && isset($_POST['color']) ){
+    
+    $ropa = new ropa($_POST['id'],$_POST['marca'],$_POST['producto'],$_POST['talle'],$_POST['color']);
+    $repositorioRopa = new RepositorioRopa();
+    $repositorioRopa->actualizar($ropa,$_POST['id']);
+}else if(isset($_POST['id'])){
 
-$id=$_POST['id'];
-$marca=$_POST['marca'];
-$producto=$_POST['producto'];
-$talle=$_POST['talle'];
-$color=$_POST['color'];
+}
 
-$sql="UPDATE ropa SET  marca='$marca',producto='$producto',talle='$talle',color='$color' WHERE id='$id'";
-$query=mysqli_query($con,$sql);
-
-    if($query){
-        Header("Location: verStock.php");
-    }
+Header("Location: verStock.php");
 ?>

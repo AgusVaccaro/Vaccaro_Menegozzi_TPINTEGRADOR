@@ -22,32 +22,4 @@ if (isset($_SESSION['usuario'])) {
 } else {
     header('Location: verStock.php');
 }
-/*
-if(
-    isset($_GET["id"]) &&
-    isset($_GET["marca"]) &&
-    isset($_GET["producto"]) &&
-    isset($_GET["talle"]) &&
-    isset($_GET["color"]) 
-
-){
-$myqsli->query("INSERT INTO
-    ropa(
-        id, marca, producto, talle, color
-    )
-    VALUES(
-        " .$_GET["id"]. ",
-        '" .$_GET["marca"]. "',
-        '" .$_GET["producto"]."',
-        '" .$_GET["talle"]."',
-        '" .$_GET["color"]."'
-        )
-    ");
-
-    }else{
-        echo "Error al ingresar los datos";
-
-header("location: verStock.php");
-    }
-?> */ 
-     
+?>

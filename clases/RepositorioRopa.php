@@ -3,6 +3,7 @@ include '.env.php';
 require_once 'Usuario.php';
 require_once 'RepositorioUsuario.php';
 require_once 'ropa.php';
+include_once 'conexion.php';
 
 class RepositorioRopa 
 {
@@ -89,6 +90,26 @@ class RepositorioRopa
 
         return ($query->execute());
     }
+
+    public function actualizar(Ropa $ropa, $id)
+    {
+       
+
+        $id = $ropa->getId();
+        $marca = $ropa->getMarca();
+        $producto = $ropa->getProducto();
+        $talle = $ropa->getTalle();
+        $color = $ropa->getColor();
+
+        $q = "UPDATE ropa SET  marca='$marca',producto='$producto',talle='$talle',color='$color' WHERE id='$id'";
+        $query = self::$conexion->prepare($q);
+        if ($query->execute()) {
+            // Se guardó bien, retornamos el id del usuario
+            return self::$conexion->insert_id;
+        } else {
+            // No se guardó bien, retornamos false
+            return false;
+        }
+        
     }
-    ?>
-                                            
+}                                       

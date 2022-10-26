@@ -10,7 +10,7 @@ if (isset($_SESSION['usuario']) && isset($_GET['id'])) {
     $repositorioRopa = new RepositorioRopa();
     $ropa = $repositorioRopa->getOne($_GET['id']);
     if ($repositorioRopa->eliminar($ropa)) {
-        $mensaje = "Producto eliminado con éxito";
+        $mensaje = "Producto eliminado";
     } else {
         $mensaje = "Error al eliminar el producto";
     }

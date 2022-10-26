@@ -1,14 +1,27 @@
 <?php 
-    include_once("conexion.php");
-
-    $con=conectar();
+require_once 'clases/usuario.php';
+require_once 'clases/ropa.php';
+require_once 'clases/RepositorioRopa.php';
+require_once 'conexion.php';
 
 $id=$_GET['id'];
+$con = conectar();
+
+
+    session_start();
+
+    if (isset($_SESSION['usuario'])) {
+        $usuario = unserialize($_SESSION['usuario']); 
+        $nombreApellido = $usuario->getNombreApellido();
+} else {
+    header('Location: index.php');
+}
 
 $sql="SELECT * FROM ropa WHERE id='$id'";
 $query=mysqli_query($con,$sql);
 
 $row=mysqli_fetch_array($query);
+
 ?>
 
 <!DOCTYPE html>
