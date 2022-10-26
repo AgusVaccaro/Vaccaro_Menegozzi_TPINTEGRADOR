@@ -25,6 +25,13 @@
       </form>
   </div>
 
+  <?php
+            if (isset($_GET['mensaje'])) {
+                echo '<div id="mensaje" class="alert alert-primary text-center">
+                    <p>'.$_GET['mensaje'].'</p></div>';
+            }
+        ?>
+
 
       <table class="table_id table table-striped table-dark table_id ">
   </div>
@@ -47,7 +54,6 @@
 }
   }
 ?>
-
 
 </body>
   <div class="col-md-8">

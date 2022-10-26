@@ -14,22 +14,8 @@ if (isset($_SESSION['usuario']) && isset($_GET['id'])) {
     } else {
         $mensaje = "Error al eliminar el producto";
     }
-    header('Location: home.php?mensaje=$mensaje');
+    header('Location: verStock.php?mensaje=Producto eliminado');
 } else {
-    header('Location: index.php');
+    header('Location: home.php');
 }
-
-
-
-
-/*$con=conectar();
-
-$id=$_GET['id'];
-
-$sql="DELETE FROM ropa  WHERE id='$id'";
-$query=mysqli_query($con,$sql);
-
-    if($query){
-        Header("Location: verStock.php");
-    }*/
 ?>

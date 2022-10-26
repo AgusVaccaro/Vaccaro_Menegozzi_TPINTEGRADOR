@@ -50,7 +50,7 @@ class RepositorioRopa
     $query = self::$conexion->prepare($q);
     $query->bind_param("i", $id);
   
-    $query->bind_result($id, $marca, $producto, $talle, $color);
+    $query->bind_result($marca, $producto, $talle, $color);
 
     if ($query->execute()) {
         if ($query->fetch()) {
