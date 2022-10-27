@@ -1,5 +1,5 @@
 <?php
-require_once 'ControlSesion.php';
+require_once 'clases/ControlSesion.php';
 
 
 if (empty($_POST['usuario']) || empty($_POST['contraseña'])) {

@@ -99,6 +99,6 @@
 
     <a href="logout.php" class="btn btn-outline-danger">Cerrar sesión</a>
     </center>
-    <script src="buscador.js"></script>
+    <script src="js/buscador.js"></script>
 </body>
 </html>

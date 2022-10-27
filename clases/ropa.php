@@ -6,6 +6,7 @@ class Ropa{
     protected $producto;
     protected $talle;
     protected $color;
+    protected $movimiento = [];
 
     public function __construct($id, $marca, $producto, $talle, $color)
     {
@@ -14,6 +15,7 @@ class Ropa{
         $this->producto = $producto;
         $this->talle = $talle;
         $this->color = $color;
+        $this->movimiento = [$this->ropa];
     }
 
     public function setId($id){

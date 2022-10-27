@@ -39,7 +39,7 @@
               <input type="password" name="contraseña" class="form-control password1" value="clave" placeholder="Contraseña" />
       <span class="fa fa-fw fa-eye password-icon show-password"></span>
               <div class="d-grid">
-             
+             <br>
               
                 <button class="btn btn-outline-dark" type="submit">Ingresar</button>
               </div>
@@ -54,6 +54,6 @@
   </div>
 </div>
       </center>
-      <script src="pass.js"></script>
+      <script src="js/pass.js"></script>
     </body>
 </html>
