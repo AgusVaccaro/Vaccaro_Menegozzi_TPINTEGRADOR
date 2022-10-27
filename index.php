@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width">
         <title>Sistema de control de stock</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    </head>
+        <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="pass.css">       
+      </head>
     <body class="container">
         <center>
             <br>
@@ -33,8 +36,11 @@
               <input name="usuario" class="form-control form-control-md" placeholder="Usuario"><br>
               </div>
               <div class="mb-3">
-              <input name="contraseña" type="text" class="form-control form-control-md" placeholder="Contraseña"><br>
+              <input type="password" name="contraseña" class="form-control password1" value="clave" placeholder="Contraseña" />
+      <span class="fa fa-fw fa-eye password-icon show-password"></span>
               <div class="d-grid">
+             
+              
                 <button class="btn btn-outline-dark" type="submit">Ingresar</button>
               </div>
             </form>
@@ -48,5 +54,6 @@
   </div>
 </div>
       </center>
+      <script src="pass.js"></script>
     </body>
 </html>

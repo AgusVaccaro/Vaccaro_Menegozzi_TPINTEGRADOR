@@ -32,19 +32,19 @@ if (isset($_SESSION['usuario'])) {
 		<form action="ingresar.php" method="get">
 			
 			
-			<input type="text" class="form-control mb-3" name="id" placeholder="Id del producto">
+			<input type="text" class="form-control mb-3" name="id" placeholder="Id del producto" required>
 	
 
-			<input type="text" class="form-control mb-3" name="marca" placeholder="Marca">
+			<input type="text" class="form-control mb-3" name="marca" placeholder="Marca" required>
 		
 			
-			<input type="text" class="form-control mb-3" name="producto" placeholder="Producto">
+			<input type="text" class="form-control mb-3" name="producto" placeholder="Producto" required>
 			
 			
-			<input type="text" class="form-control mb-3" name="talle" placeholder="Talle">
+			<input type="text" class="form-control mb-3" name="talle" placeholder="Talle" required>
 			
 
-			<input type="text" class="form-control mb-3" name="color" placeholder="Color">
+			<input type="text" class="form-control mb-3" name="color" placeholder="Color" required>
 			
 
 			<button type="submit" class="btn btn-success">ENVIAR</button>
